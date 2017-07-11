@@ -43,6 +43,9 @@ module.exports = {
       writeToFileEmit: true
     }),
     new webpack.ProvidePlugin({Promise: 'es6-promise-promise'})
+    // new webpack.IgnorePlugin(/react\/addons/),
+    // new webpack.IgnorePlugin(/react\/lib\/ReactContext/),
+    // new webpack.IgnorePlugin(/react\/lib\/ExecutionEnvironment/)
   ],
 
   resolve: {
