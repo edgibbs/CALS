@@ -1,5 +1,5 @@
 class DictionaryBase < CalsBase
-  include Concerns::BaseCalsApiProtocolProvider
+  include BaseCalsApiProtocolProvider
 
   attr_accessor :id, :value
 

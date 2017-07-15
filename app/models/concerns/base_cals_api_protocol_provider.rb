@@ -1,4 +1,4 @@
-module Concerns::BaseCalsApiProtocolProvider
+module BaseCalsApiProtocolProvider
   extend ActiveSupport::Concern
 
   # class methods

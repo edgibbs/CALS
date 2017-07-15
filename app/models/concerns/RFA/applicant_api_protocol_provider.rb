@@ -1,6 +1,6 @@
-module Concerns::RFA::ApplicantApiProtocolProvider
+module RFA::ApplicantApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
+  include BaseApiProtocolProvider
 
   class_methods do
     def create(auth_header, parent_id, body)

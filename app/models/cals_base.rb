@@ -14,6 +14,4 @@ class CalsBase
   def self.parent_path
     ''
   end
-
-
 end

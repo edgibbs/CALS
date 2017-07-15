@@ -1,14 +1,4 @@
-module Concerns::ChildPreferenceApiProtocolProvider
+module ChildPreferenceApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
-
-  class_methods do
-  
-  end
-
-  included do
-    # def instance_method_example
-    #   'example of an instance method'
-    # end
-  end
+  include BaseApiProtocolProvider
 end

@@ -1,5 +1,5 @@
 class ChildPreference < CalsBase
-include Concerns::ChildPreferenceApiProtocolProvider
+  include ChildPreferenceApiProtocolProvider
   attr_accessor :sibling_group_size, :age_group_preference
 
 end

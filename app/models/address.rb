@@ -1,5 +1,5 @@
 class Address < CalsBase
-  include Concerns::AddressApiProtocolProvider
+  include AddressApiProtocolProvider
 
   attr_accessor :street_address, :zip, :city, :state, :type
 end

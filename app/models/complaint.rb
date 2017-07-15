@@ -1,5 +1,5 @@
 class Complaint < CalsBase
-  include Concerns::ComplaintApiProtocolProvider
+  include ComplaintApiProtocolProvider
 
   attr_accessor :id, :code
 end

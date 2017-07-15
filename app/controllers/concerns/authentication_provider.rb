@@ -1,4 +1,3 @@
-
 module AuthenticationProvider
   extend ActiveSupport::Concern
 

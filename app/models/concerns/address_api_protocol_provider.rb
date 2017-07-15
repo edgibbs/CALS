@@ -1,6 +1,6 @@
-module Concerns::AddressApiProtocolProvider
+module AddressApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
+  include BaseApiProtocolProvider
 
   class_methods do
   

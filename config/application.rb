@@ -23,6 +23,7 @@ module Cals
 
     config.logger = ActiveSupport::Logger.new(STDOUT)
     config.log_level = :debug
+    config.autoload_paths += %W( #{config.root}/app/controllers/concerns #{config.root}/app/models/concerns)
 
     config.react.addons = true
 
