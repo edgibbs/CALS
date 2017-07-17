@@ -10,7 +10,7 @@ describe Rfa::ApplicantController do
 
   describe 'post create' do
     it 'makes an applicant' do
-      rfa_application =   FactoryGirl.build(:application, id: 1)
+      rfa_application = FactoryGirl.build(:application, id: 1)
 
       post :create,  params: {a01_id: rfa_application.id}
 

@@ -2,10 +2,10 @@ class Rfa::ResidenceController < CalsBaseController
 
   def create
     post_data = request.body.read
-    rfa_residence = rfa_residence_helper.create(params[:a01_id], post_data)
+    rfa_residence_helper.create(params[:a01_id], post_data)
   end
 
   def rfa_residence_helper
-    Helpers::RFA::ApplicationResidence.new(auth_header: session['token'])
+    RFA::ApplicationResidence.new(auth_header: session['token'])
   end
 end

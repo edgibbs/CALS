@@ -1,4 +1,4 @@
-class Helpers::RFA::ApplicationResidence < Helpers::ModelHelperBase
+module RFA::ApplicationResidenceHelper
 
   def model_class
     RFA::ApplicationResidence

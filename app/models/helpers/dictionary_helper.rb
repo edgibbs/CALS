@@ -1,4 +1,4 @@
-class Helpers::Dictionary < Helpers::ModelHelperBase
+class DictionaryHelper < ModelHelperBase
 
   def race_types
     Dictionaries::RaceType.all(auth_header)

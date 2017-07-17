@@ -1,4 +1,4 @@
-class Helpers::RFA::Applicant < Helpers::ModelHelperBase
+module Rfa::ApplicantHelper
 
   def model_class
     RFA::Applicant

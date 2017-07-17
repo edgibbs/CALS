@@ -1,4 +1,4 @@
-class Helpers::ModelHelperBase
+class ModelHelperBase
   include ActiveModel::Model
 
   attr_accessor :model_class

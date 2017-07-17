@@ -28,21 +28,20 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def update
-
   end
 
   private
 
   def rfa_application_helper
-    Helpers::RFA::Application.new(auth_header: session['token'])
+    Rfa::ApplicationHelper.new(auth_header: session['token'])
   end
 
   def rfa_applicant_helper
-    Helpers::RFA::Applicant.new(auth_header: session['token'])
+    Rfa::ApplicantHelper.new(auth_header: session['token'])
   end
 
   def dictionaries_helper
-    Helpers::Dictionary.new(auth_header: session['token'])
+    DictionaryHelper.new(auth_header: session['token'])
   end
 
 end

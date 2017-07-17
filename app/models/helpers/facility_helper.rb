@@ -1,4 +1,4 @@
-class Helpers::Facility < Helpers::ModelHelperBase
+class FacilityHelper < ModelHelperBase
 
   def model_class
     Facility
