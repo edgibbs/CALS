@@ -3,49 +3,46 @@ import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
 import {yesNo} from '../constants/constants'
 
-export default class AddressCard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      stateTypes: {items: this.props.stateTypes.items},
-      addressFieldValues: {
-        address: [{
-          street_address: '',
-          zip: '',
-          city: '',
-          state: {
-            id: '',
-            value: ''
-          },
-          type: {
-            id: '1',
-            value: 'physical'
-          }
-        },
-        {
-          street_address: '',
-          zip: '',
-          city: '',
-          state: {
-            id: '',
-            value: ''
-          },
-          type: {
-            id: '2',
-            value: 'mailing'
-          }
-        }
-        ]
+const blankAddressFields = {
+  addressFieldValues: {
+    address: [{
+      street_address: '',
+      zip: '',
+      city: '',
+      state: {
+        id: '',
+        value: ''
       },
-      physical_mailing_similar: true
+      type: {
+        id: '1',
+        value: 'physical'
+      }
+    },
+    {
+      street_address: '',
+      zip: '',
+      city: '',
+      state: {
+        id: '',
+        value: ''
+      },
+      type: {
+        id: '2',
+        value: 'mailing'
+      }
     }
-    this.onChange = this.onChange.bind(this)
-  }
+    ]
+  },
+  physical_mailing_similar: true
+
+}
+
+export default class AddressCard extends React.Component {
   onChange (value, e) {
-    let data = this.state.addressFieldValues.address
+    let data = blankAddressFields.addressFieldValues.address
     let index = e.includes('secondary') === true ? 1 : 0
     if (typeof (value) !== 'object' && e === 'physical_mailing_similar') {
-      this.state.physical_mailing_similar = value.toLowerCase() === 'yes'
+      blankAddressFields.physical_mailing_similar = value.toLowerCase() === 'yes'
     } else if (typeof (value) === 'object') {
       data[index]['state'] = {id: value.target.selectedOptions[0].value, value: value.target.selectedOptions[0].text}
     } else {
@@ -56,11 +53,11 @@ export default class AddressCard extends React.Component {
       addressFieldValues: data
     })
 
-    this.props.sendProps(this.state.addressFieldValues)
+    // this.props.sendProps(this.state.addressFieldValues)
   }
 
   render () {
-    const hiddenMailingSameAsPhysical = this.state.physical_mailing_similar ? 'hidden' : ''
+    const hiddenMailingSameAsPhysical = blankAddressFields.physical_mailing_similar ? 'hidden' : ''
     return (
       <div className='card-body'>
         <div className='row'>
@@ -79,7 +76,7 @@ export default class AddressCard extends React.Component {
 
             <DropDownField gridClassName='col-md-4' id='state'
               selectClassName={'reusable-select'}
-              optionList={this.state.stateTypes.items}
+              optionList={this.props.stateTypes.items}
               label={'State'}
               onChange={(event, number) => this.onChange(event, ('state'))} />
 
@@ -104,7 +101,7 @@ export default class AddressCard extends React.Component {
 
               <DropDownField gridClassName='col-md-4' id='secondary_state'
                 selectClassName={'reusable-select'}
-                optionList={this.state.stateTypes.items}
+                optionList={this.props.stateTypes.items}
                 label={'State'}
                 onChange={(event, number) => this.onChange(event, ('secondary_state'))} />
 

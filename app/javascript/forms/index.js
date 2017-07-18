@@ -58,8 +58,10 @@ export default class Forms extends React.Component {
     this.setState({focusComponentName: focusComponentName})
   }
 
-  getResidentsProps (data) {
-    console.log(data)
+  getResidentsProps (key, value) {
+    const newState = {application: {[key]: value}}
+    this.setState(newState)
+    //console.log(data)
   }
 
   /*  getResidentData (data) {
@@ -109,8 +111,11 @@ export default class Forms extends React.Component {
               <ResidenceCards
                 focusComponentName={this.state.focusComponentName}
                 residence={this.state.application.residence}
+                languageTypes={this.props.languageTypes.items}
+                residenceTypes={this.props.residenceTypes}
+                stateTypes={this.props.stateTypes.items}
                 setFocusState={this.setFocusState}
-                parentProps={this.getResidentsProps}
+                setParentState={this.getResidentsProps}
                 {...this.props} />
             </div>
 
