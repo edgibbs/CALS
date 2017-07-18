@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Immutable from 'immutable'
 import NameCard from './nameCard'
 import PhoneComponent from './phoneNumberCardsGroup.jsx'
 import AboutApplicant from './aboutApplicantCard.jsx'
@@ -14,9 +15,9 @@ export default class ApplicantCard extends React.Component {
   }
 
   setApplicantState (key, value) {
-    let applicantData = this.props.applicantFields
-    applicantData[key] = value
-    this.props.setParentState(this.props.index, applicantData)
+    let applicantData = Immutable.fromJS(this.props.applicantFields)
+    applicantData = applicantData.set(key, value)
+    this.props.setParentState(this.props.index, applicantData.toJS())
   }
 
   getFocusClassName (componentName) {
